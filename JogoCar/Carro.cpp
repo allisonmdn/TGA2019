@@ -40,7 +40,7 @@ void Carro::move(float dx, float dy, float pos2)
 		car.setAnimacao(2, false);
 		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
 		{
-			setRot(5);
+			setRot(50);
 			getRot();
 		}
 	}

@@ -38,7 +38,4 @@
 *.vs
 */Debug
 
-# Project
-
-*.vcxproj
 
