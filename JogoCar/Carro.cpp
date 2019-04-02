@@ -19,36 +19,83 @@ void Carro::move(float dx, float dy, float pos2)
 	{
 		y -= 1;
 		pos = 3;
-		car.setAnimacao(0, false);		
+		car.setAnimacao(0, false);
+		setRot(0);
 	}
 	if (gTeclado.segurando[TECLA_D])
 	{
 		x += 1;
 		pos = 1;
-		car.setAnimacao(3, false);		
+		car.setAnimacao(3, false);
+		if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_S])
+		{
+			setRot(-50);
+			pos -= 0.5;
+
+		}
+		else if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_W])
+		{
+			setRot(-50);
+			pos += 0.5;//Diag. superior dir.
+		}
+		else
+		{
+			setRot(0);
+		}
+		
 	}
 	if (gTeclado.segurando[TECLA_A])
 	{
 		x -= 1;
 		pos = 2;
-		car.setAnimacao(1, false);		  
+		car.setAnimacao(1, false);
+		
+		
+		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
+		{
+			setRot(-50);
+			pos -= -0.5;
+		}
+		else if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_W])
+		{
+			setRot(50);
+			pos += 0.5;
+		}
+		else
+		{
+			setRot(0);
+		}
+		
 	}
 	if (gTeclado.segurando[TECLA_S])
 	{
 		y += 1;
 		pos = 0;
 		car.setAnimacao(2, false);
-		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
+		
+		if (gTeclado.segurando[TECLA_S] && gTeclado.segurando[TECLA_A])
 		{
 			setRot(50);
-			getRot();
+			pos += 0.5;
 		}
+		else if (gTeclado.segurando[TECLA_S] && gTeclado.segurando[TECLA_D])
+		{
+			setRot(-50);
+			pos -= 0.5;
+		}
+		else
+		{
+			setRot(0);
+		}
+		
+
 	}
 	
 	if (!gTeclado.segurando[TECLA_S] && !gTeclado.segurando[TECLA_D] && !gTeclado.segurando[TECLA_W] && !gTeclado.segurando[TECLA_A] && getSpeed() == 0)
 	{
 		//setar animação para carro parado.
 	}
+	
 
 
 	car.avancarAnimacao();
@@ -67,7 +114,7 @@ float Carro::getY()
 
 void Carro::draw()
 {
-	car.desenhar(x, y);
+	car.desenhar(x, y, getRot());
 }
 
 void Carro::update()

@@ -26,7 +26,7 @@ public:
 private:
 	//Var
 	float x, y;
-	float pos;		 
+	float pos; //Direção		 
 	Sprite car;
 	float speed;
 		
