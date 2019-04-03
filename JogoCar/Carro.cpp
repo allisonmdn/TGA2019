@@ -31,13 +31,13 @@ void Carro::move(float dx, float dy, float pos2)
 		if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_S])
 		{
 			setRot(-50);
-			pos += 0.5; //Diag. inferior dir.
+			pos = 1 - 0.5; //Diag. inferior dir.
 
 		}
 		else if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_W])
 		{
 			setRot(-50);
-			pos -= 0.5;//Diag. superior dir.
+			pos = 1 + 0.5;//Diag. superior dir.
 		}
 		else
 		{
@@ -55,12 +55,12 @@ void Carro::move(float dx, float dy, float pos2)
 		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
 		{
 			setRot(-50);
-			pos += 0.5;
+			pos = 2 - 0.5;
 		}
 		else if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_W])
 		{
 			setRot(50);
-			pos -= 0.5;
+			pos = 2 + 0.5;
 		}
 		else
 		{
@@ -80,7 +80,7 @@ void Carro::move(float dx, float dy, float pos2)
 	
 	if (!gTeclado.segurando[TECLA_S] && !gTeclado.segurando[TECLA_D] && !gTeclado.segurando[TECLA_W] && !gTeclado.segurando[TECLA_A] && getSpeed() == 0)
 	{
-		//setar animação para carro parado.
+		//setar animaÃ§Ã£o para carro parado.
 	}
 	
 
