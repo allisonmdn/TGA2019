@@ -21,6 +21,7 @@ void Carro::move(float dx, float dy, float pos2)
 		pos = 3;
 		car.setAnimacao(0, false);
 		setRot(0);
+	
 	}
 	if (gTeclado.segurando[TECLA_D])
 	{
@@ -30,13 +31,13 @@ void Carro::move(float dx, float dy, float pos2)
 		if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_S])
 		{
 			setRot(-50);
-			pos -= 0.5;
+			pos += 0.5; //Diag. inferior dir.
 
 		}
 		else if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_W])
 		{
 			setRot(-50);
-			pos += 0.5;//Diag. superior dir.
+			pos -= 0.5;//Diag. superior dir.
 		}
 		else
 		{
@@ -54,12 +55,12 @@ void Carro::move(float dx, float dy, float pos2)
 		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
 		{
 			setRot(-50);
-			pos -= -0.5;
+			pos += 0.5;
 		}
 		else if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_W])
 		{
 			setRot(50);
-			pos += 0.5;
+			pos -= 0.5;
 		}
 		else
 		{
@@ -71,22 +72,8 @@ void Carro::move(float dx, float dy, float pos2)
 	{
 		y += 1;
 		pos = 0;
-		car.setAnimacao(2, false);
-		
-		if (gTeclado.segurando[TECLA_S] && gTeclado.segurando[TECLA_A])
-		{
-			setRot(50);
-			pos += 0.5;
-		}
-		else if (gTeclado.segurando[TECLA_S] && gTeclado.segurando[TECLA_D])
-		{
-			setRot(-50);
-			pos -= 0.5;
-		}
-		else
-		{
-			setRot(0);
-		}
+		car.setAnimacao(2, false);		
+		setRot(0);
 		
 
 	}
