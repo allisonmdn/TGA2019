@@ -27,7 +27,7 @@ void Jogo::finalizar()
 {
 	//	O resto da finalização vem aqui (provavelmente, em ordem inversa a inicialização)!
 	//	...
-
+	gRecursos.descarregarTudo();
 	uniFinalizar();
 }
 
