@@ -8,7 +8,7 @@ public:
 	~Carro();
 
 	//Methods
-	void move(float dx, float dy, float pos2);
+	void move(float dx, float dy, float dir2);
 	void draw();
 	void update();
 
@@ -26,7 +26,7 @@ public:
 private:
 	//Var
 	float x, y;
-	float pos; //Direção		 
+	float dir; //Direção		 
 	Sprite car;
 	float speed;
 		

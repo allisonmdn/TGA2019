@@ -9,16 +9,16 @@ Carro::~Carro()
 {
 }
 
-void Carro::move(float dx, float dy, float pos2)
+void Carro::move(float dx, float dy, float dir2)
 {
 	this->x = dx;
 	this->y = dy;
-	this->pos = pos2;
+	this->dir = dir2;
 
 	if (gTeclado.segurando[TECLA_W])
 	{
 		y -= 1;
-		pos = 3;
+		dir = 3;
 		car.setAnimacao(0, false);
 		setRot(0);
 	
@@ -26,7 +26,7 @@ void Carro::move(float dx, float dy, float pos2)
 	if (gTeclado.segurando[TECLA_S])
 	{
 		y += 1;
-		pos = 0;
+		dir = 0;
 		car.setAnimacao(2, false);
 		setRot(0);
 
@@ -34,18 +34,18 @@ void Carro::move(float dx, float dy, float pos2)
 	if (gTeclado.segurando[TECLA_D])
 	{
 		x += 1;
-		pos = 1;
+		dir = 1;
 		car.setAnimacao(3, false);
 		if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_S])
 		{				
 			setRot(50);
-			pos = 1 - 0.5; //Dir. inferior
+			dir = 1 - 0.5; //Dir. inferior
 
 		}
 		else if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_W])
 		{
 			setRot(-50);
-			pos = 1 + 0.5; //Dir. superior
+			dir = 1 + 0.5; //Dir. superior
 		}
 		else
 		{
@@ -56,19 +56,19 @@ void Carro::move(float dx, float dy, float pos2)
 	if (gTeclado.segurando[TECLA_A])
 	{
 		x -= 1;
-		pos = 2;
+		dir = 2;
 		car.setAnimacao(1, false);
 		
 		
 		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
 		{  				
 			setRot(-50);
-			pos = 2 - 0.5; //Esq. inferior
+			dir = 2 - 0.5; //Esq. inferior
 		}
 		else if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_W])
 		{
 			setRot(50);
-			pos = 2 + 0.5; //Esq. superior
+			dir = 2 + 0.5; //Esq. superior
 		}
 		else
 		{
@@ -105,7 +105,7 @@ void Carro::draw()
 
 void Carro::update()
 {
-	this->move(x, y, pos);
+	this->move(x, y, dir);
 }
 
 
@@ -131,7 +131,7 @@ Sprite Carro::getSprite()
 
 float Carro::getPos()
 {
-	return pos;
+	return dir;
 }
 
 float Carro::getSpeed()
