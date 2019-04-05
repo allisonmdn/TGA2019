@@ -1,17 +1,17 @@
-#include "lista.h"
+#include "Select.h"
 
 
 
-lista::lista()
+Select::Select()
 {
 }
 
 
-lista::~lista()
+Select::~Select()
 {
 }
 
-bool lista::loadSpriteSheet()
+bool Select::loadSpriteSheet()
 {
 	gRecursos.carregarSpriteSheet("Car1", "assets/spritesheets/car_red.png", 4, 1);
 	gRecursos.carregarSpriteSheet("Car2", "assets/spritesheets/car_blue.png", 4, 1);
@@ -23,7 +23,7 @@ bool lista::loadSpriteSheet()
 	return true;
 }
 
-void lista::select(int i)
+void Select::select(int i)
 {
 	pos = i;
 	

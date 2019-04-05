@@ -1,10 +1,10 @@
 #include "Carro.h"
 #pragma once
-class lista: public Carro
+class Select: public Carro
 {
 public:
-	lista();
-	~lista();
+	Select();
+	~Select();
 	bool loadSpriteSheet();	
 	void select(int i);
 	void movLista();

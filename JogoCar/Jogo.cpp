@@ -40,8 +40,6 @@ void Jogo::executar()
 		p1->draw();
 		p1->update();
 		
-		
-
 		//	Seu código vem aqui!
 		//	...
 
