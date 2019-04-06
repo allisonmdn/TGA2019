@@ -1,7 +1,7 @@
 #include "Carro.h"
 
 Carro::Carro()
-{
+{	
 	this->x = 400;
 	this->y = 300;
 }
