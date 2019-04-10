@@ -3,7 +3,7 @@
 //#include "Carro.h"
 
 #include "Select.h"
-class Jogo
+class Jogo: public Select
 {
 public:
 	Jogo();

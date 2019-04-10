@@ -3,15 +3,13 @@
 
 
 Select::Select()
-{
-	
-	pos = 1;
-	sprselect = "";
+{		
+	pos = 1; 	
 	xMenu = 400;
-	yMenu = 300;  	
-	sprMenuSelect.setSpriteSheet("selection_structure"); 	
-	sprDownSelect.setSpriteSheet("selection_down");	
-	spr->setSpriteSheet(sprselect);
+	yMenu = 300;
+	sprDownSelect.setX(xMenu);
+	sprDownSelect.setY(yMenu);
+	
 }
 
 
@@ -19,38 +17,42 @@ Select::~Select()
 {
 }
 
-bool Select::selectOp(int i)
-{
-	pos = i;
-		
-	if (gTeclado.pressionou[TECLA_ENTER])
-	{
-		selectOp(pos);		
-	
-		return true;
-	}
 
-}
-
-void Select::movLista(float xM)
+void Select::movLista()
 {		
-	xMenu = xM;
+	sprMenuSelect.setSpriteSheet("selection_structure");
+	sprDownSelect.setSpriteSheet("selection_down");
+	spr->setSpriteSheet(sprselect);
 
 	if (gTeclado.soltou[TECLA_DIR] && pos >= 1 && pos < 3 )
 	{
 		pos += 1;
-		this->sprDownSelect.setFrame(pos); //Seta frame/seleção através da posição da lista.
-		this->sprDownSelect.getFrame();	  //Recebe   		
+			
 	}
 	if (gTeclado.soltou[TECLA_ESQ] && pos >= 2 && pos <= 3)
 	{
 		pos -= 1;
-		this->sprDownSelect.setFrame(pos);
-		this->sprDownSelect.getFrame();
+				
+	}
+	if (pos == 1)
+	{
+		sprDownSelect.setX(267);
+	}
+	if (pos == 2)
+	{
+		sprDownSelect.setX(398);
+	}
+	if (pos == 3)
+	{
+		sprDownSelect.setX(528);
+	}
+	xMenu = sprDownSelect.getX();	//Atribuir na variável do eixo x à posição da sprite.
+	if (gTeclado.pressionou[TECLA_ENTER])
+	{
+		
+		lista.at(pos - 1); //Encontrar a posição de 0 a 2, var. "pos" inicializada em 1.
 		
 	}
-	//xMenu = sprDownSelect.getX();	//Atribuir na variável do eixo x à posição da sprite.
-	this->selectOp(pos);
 		
 }
 
@@ -58,43 +60,27 @@ void Select::executeSelect()
 {
 		
 	sprMenuSelect.desenhar(400, 300);	   	
-	sprDownSelect.desenhar(this->getXMenu(), this->getYMenu());
-	if (selectOp(pos) == true)
-	{
-		spr->draw();
-	}
-	
+	sprDownSelect.desenhar();
+		
 }
 
 void Select::updateM()
 {
-	movLista(xMenu);
-	spr->update();
+	movLista();				 
+	
 }
 
-bool Select::Listar()
+void Select::Listar()
 {
 	
-	if (lista.empty())
-	{
-		sprselect = "Car1";
-		lista.front() = sprselect;
-	}
-	else
-	{
-		sprselect = "Car2";
-		lista.push_back(sprselect);
-		sprselect = "Car3";
-		lista.push_back(sprselect);	   		
-	}
-	lista.at(pos - 1); //Encontrar a posição de 0 a 2, var. "pos" inicializada em 1.
-
-	return true;
-}
-
-void Select::setXMenu()
-{
-	//Receber mudança de coordenadas do eixo x.
+	
+	sprselect = "Car1";
+	lista.front() = sprselect;
+	sprselect = "Car2";
+	lista.push_back(sprselect);
+	sprselect = "Car3";
+	lista.push_back(sprselect);	   		
+		
 }
 
 int Select::getPos()
