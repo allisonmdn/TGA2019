@@ -13,7 +13,8 @@ void Jogo::inicializar()
 	uniInicializar(800, 600, false);
 		
 
-	gRecursos.carregarSpriteSheet("selection_structure", "assets/selection/selection_structure.png", 1, 1);
+	gRecursos.carregarSpriteSheet("selection_structure_back", "assets/selection/selection_structure_back.png", 1, 1);
+	gRecursos.carregarSpriteSheet("selection_structure_obj", "assets/selection/selection_structure_object.png", 1, 1);
 	gRecursos.carregarSpriteSheet("selection_down", "assets/selection/selection_down.png", 1, 3);
 
 	gRecursos.carregarSpriteSheet("Car1", "assets/spritesheets/car_red.png", 4, 1);

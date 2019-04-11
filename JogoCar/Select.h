@@ -13,6 +13,7 @@ public:
 	void executeSelect();
 	void updateM();
 	void Listar();//Lista de carros.
+	void FundoMenu();
 
 
 	//Sets
@@ -27,11 +28,13 @@ public:
 
 private:
 	int pos;
-	std::string sprselect;//Atribuindo o carro selecionado.
-	Sprite sprMenuSelect;
+	std::string sprselect;
+	Sprite menuS;//Atribuindo o carro selecionado.
+	Sprite sprMenuSelect, sprMenuSelectObj;
 	BotaoSprite sprDownSelect;//Sprite manu seleção.
 	float xMenu, yMenu;
 	vector<std::string> lista;
+	vector<Sprite> menu;
 	Carro * spr = new Carro(); // Sprite carros.
 
 
