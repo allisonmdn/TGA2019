@@ -163,24 +163,9 @@ void Jogo::updateM()
 void Jogo::Listar()
 {
 		
-	if (pos == 1)
-	{
-		carro->setSpriteSheet("Car" + std::to_string(1)); //Seta sprite do carro selecionado.
-		lista.push_back(carro->getSprite()); //Recebe a sprite na última posição da lista.
-		carro->desenhar(xMenu, 300);//Desenha na posição com a seleção. 		
-	}
-	if (pos == 2)
-	{
-		carro->setSpriteSheet("Car" + std::to_string(2));
-		lista.push_back(carro->getSprite());
-		carro->desenhar(xMenu, 300);		
-	}
-	if (pos == 3)
-	{
-		carro->setSpriteSheet("Car" + std::to_string(3));
-		lista.push_back(carro->getSprite());
-		carro->desenhar(xMenu, 300); 		
-	}			 	
+	carro->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.
+	lista.push_back(carro->getSprite()); //Recebe a sprite na última posição da lista.
+	carro->desenhar(xMenu, 300);//Desenha na posição com a seleção. 				 	
 		
 }
 
