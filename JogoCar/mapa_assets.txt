@@ -5,6 +5,7 @@ sprite_sheet selection_down assets/selection/selection_down.png 1 3
 sprite_sheet Car1 assets/spritesheets/car_red.png 4 1
 sprite_sheet Car2 assets/spritesheets/car_blue.png 4 1
 sprite_sheet Car3 assets/spritesheets/car_yellow.png 4 1
+sounds SMCoin assets/sounds/smario-coin.wav
 music Kings_Feast assets/sounds/Kings_Feast.ogg
-font MCraft assets/fonts/Minecraft.ttf 16 16 16 0 
 sounds Hurt assets/sounds/Hurt.wav
+font MCraft assets/fonts/Minecraft.ttf

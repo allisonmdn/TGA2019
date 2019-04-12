@@ -93,6 +93,8 @@ void Jogo::executar()
 		if (gTeclado.soltou[TECLA_ENTER])
 		{
 			//lista.at(pos - 1);
+			gAudios.tocar("SMCoin", 50);
+
 			while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 				{
 					uniIniciarFrame();

@@ -54,13 +54,15 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 
 				if (def_resource_type == "sprite_sheet")
 				{						
-
-					gDebug.depurar("Erro", f_arquivos_rec.fail());
-					gDebug.depurar("tipo_do_recurso", def_resource_type);
-					gDebug.depurar("nome_do_recurso", def_resource_name);
-					gDebug.depurar("caminho_do_recurso", def_resource_local);
-					gDebug.depurar("numero_animacoes", def_n_animations);
-					gDebug.depurar("n_max_frames", def_n_max_frames);
+					if (f_arquivos_rec.fail())
+					{
+						gDebug.depurar("Erro", f_arquivos_rec.fail());
+						gDebug.depurar("tipo_do_recurso", def_resource_type);
+						gDebug.depurar("nome_do_recurso", def_resource_name);
+						gDebug.depurar("caminho_do_recurso", def_resource_local);
+						gDebug.depurar("numero_animacoes", def_n_animations);
+						gDebug.depurar("n_max_frames", def_n_max_frames);
+					}
 
 					gRecursos.carregarSpriteSheet(def_resource_name, def_resource_local, std::stoi(def_n_animations, &size),
 						std::stoi(def_n_max_frames, &size), QUALIDADE_ESCALA_BAIXA);
@@ -79,12 +81,13 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 				         //SOUNDS BEGIN
 				if (def_resource_type == "sounds")
 				{
-					
-					gDebug.depurar("Erro", f_arquivos_rec.fail());
-					gDebug.depurar("tipo_do_recurso", def_resource_type);
-					gDebug.depurar("nome_do_recurso", def_resource_name);
-					gDebug.depurar("caminho_do_recurso", def_resource_local);
-
+					if (f_arquivos_rec.fail())
+					{
+						gDebug.depurar("Erro", f_arquivos_rec.fail());
+						gDebug.depurar("tipo_do_recurso", def_resource_type);
+						gDebug.depurar("nome_do_recurso", def_resource_name);
+						gDebug.depurar("caminho_do_recurso", def_resource_local);
+					}
 					gRecursos.carregarAudio(def_resource_name, def_resource_local);
 					
 					if (!gRecursos.carregouAudio(def_resource_name))
@@ -101,12 +104,13 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 
 				if (def_resource_type == "music")
 				{
-						
-					gDebug.depurar("Erro", f_arquivos_rec.fail());
-					gDebug.depurar("tipo_do_recurso", def_resource_type);
-					gDebug.depurar("nome_do_recurso", def_resource_name);
-					gDebug.depurar("caminho_do_recurso", def_resource_local);
-
+					if (f_arquivos_rec.fail())
+					{
+						gDebug.depurar("Erro", f_arquivos_rec.fail());
+						gDebug.depurar("tipo_do_recurso", def_resource_type);
+						gDebug.depurar("nome_do_recurso", def_resource_name);
+						gDebug.depurar("caminho_do_recurso", def_resource_local);
+					}
 					gRecursos.carregarMusica(def_resource_name, def_resource_local);
 
 					if (!gRecursos.carregouMusica(def_resource_name))
@@ -120,14 +124,17 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 				}
 				          //MUSIC END
 
+						  //FONT BEGIN
+
 				if (def_resource_type == "font")
 				{
-
-					gDebug.depurar("Erro", f_arquivos_rec.fail());
-					gDebug.depurar("tipo_do_recurso", def_resource_type);
-					gDebug.depurar("nome_do_recurso", def_resource_name);
-					gDebug.depurar("caminho_do_recurso", def_resource_local);
-
+					if (f_arquivos_rec.fail())
+					{
+						gDebug.depurar("Erro", f_arquivos_rec.fail());
+						gDebug.depurar("tipo_do_recurso", def_resource_type);
+						gDebug.depurar("nome_do_recurso", def_resource_name);
+						gDebug.depurar("caminho_do_recurso", def_resource_local);
+					}
 					gRecursos.carregarFonte(def_resource_name, def_resource_local, std::stoi(tamanho, &size), std::stoi(glifoPrim, &size), std::stoi(glifoUlt, &size), QUALIDADE_ESCALA_BAIXA);
 
 					//tamanho padrão = 16.
@@ -144,6 +151,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 					}
 
 				}
+				          //FONT END
 			}			
 
 		}	 
