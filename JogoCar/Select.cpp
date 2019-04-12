@@ -19,9 +19,11 @@ Select::~Select()
 
 
 void Select::movLista()
-{		
+{	
+	
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprMenuSelectObj.setSpriteSheet("selection_structure_obj");
+	
 	sprDownSelect.setSpriteSheet("selection_down");
 	spr->setSpriteSheet(sprselect);
 
@@ -61,17 +63,16 @@ void Select::executeSelect()
 {
 		
 	sprMenuSelect.desenhar(400, 300);	   	
-	sprDownSelect.desenhar();
-	FundoMenu();
-	
-	
+	//sprDownSelect.desenhar();
+	FundoMenu();	
 		
 }
 
 void Select::updateM()
 {
-	movLista();				 
+	movLista();
 	sprMenuSelectObj.desenhar(xMenu, yMenu);
+	
 }
 
 void Select::Listar()
@@ -81,8 +82,7 @@ void Select::Listar()
 		sprselect = "Car" + std::to_string(i);
 
 		lista.push_back(sprselect);
-	}
-	
+	}	
 		
 }
 
@@ -98,8 +98,7 @@ void Select::FundoMenu()
 			sprMenuSelectObj = menuS;
 			menu.push_back(menuS);
 			sprMenuSelectObj.setAncora(xMenu, 300);
-			
-			
+						
 		}
 		else
 		{
@@ -109,7 +108,6 @@ void Select::FundoMenu()
 			
 		}
 				
-		
 	}
 }
 

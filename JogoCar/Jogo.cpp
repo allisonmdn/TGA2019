@@ -20,10 +20,8 @@ void Jogo::inicializar()
 	gRecursos.carregarSpriteSheet("Car1", "assets/spritesheets/car_red.png", 4, 1);
 	gRecursos.carregarSpriteSheet("Car2", "assets/spritesheets/car_blue.png", 4, 1);
 	gRecursos.carregarSpriteSheet("Car3", "assets/spritesheets/car_yellow.png", 4, 1);
-
-	
-		
-	//p1->setSpriteSheet("car_red");
+					
+	p1->setSpriteSheet("Car1");
    
 	//	O resto da inicialização vem aqui!
 	//	...
@@ -43,11 +41,11 @@ void Jogo::executar()
 	{
 		uniIniciarFrame();
 
-		//p1->draw();
-		//p1->update();	
 
-		select->executeSelect();
-		select->updateM();
+		p1->draw();			
+		p1->update();
+		//select->executeSelect();
+		//select->updateM();
 				
 				
 

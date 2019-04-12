@@ -1,9 +1,9 @@
 #pragma once
-#include "libUnicornio.h"
-//#include "Carro.h"
+//#include "libUnicornio.h"
+#include "Carro.h"
 
-#include "Select.h"
-class Jogo: public Select
+//#include "Select.h"
+class Jogo//: public Select
 {
 public:
 	Jogo();
@@ -14,8 +14,8 @@ public:
 
 	void executar();
 private:
-	//Carro * p1 = new Carro();
-	Select * select = new Select();
+	Carro * p1 = new Carro();
+	//Select * select = new Select();
 	
 
 };
