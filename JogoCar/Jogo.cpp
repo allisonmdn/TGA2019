@@ -49,6 +49,7 @@ void Jogo::inicializar()
 
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
+	pista1.setSpriteSheet("Pista");
 		
 	sprDownSelect.setX(xMenu);
 	sprDownSelect.setY(yMenu);
@@ -99,6 +100,7 @@ void Jogo::executar()
 				{
 					uniIniciarFrame();
 
+					pista1.desenhar(400,300);
 
 					carro->draw();
 					carro->update();
@@ -166,7 +168,7 @@ void Jogo::Listar()
 {
 		
 	carro->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.
-	lista.push_back(carro->getSprite()); //Recebe a sprite na última posição da lista.
+	//lista.push_back(carro->getSprite()); //Recebe a sprite na última posição da lista.
 	carro->desenhar(xMenu, 300);//Desenha na posição com a seleção. 				 	
 		
 }

@@ -101,11 +101,22 @@ float Carro::getY()
 void Carro::draw()
 {
 	car.desenhar(x, y, getRot());
+	
 }
 
 void Carro::update()
 {
 	this->move(x, y, dir);
+	especialAtk();
+}
+
+void Carro::especialAtk()
+{
+	if (gTeclado.soltou[TECLA_ESPACO])
+	{
+		
+
+	}
 }
 
 
