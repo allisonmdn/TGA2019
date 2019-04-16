@@ -26,7 +26,7 @@ void Jogo::inicializar()
 	
 	
     this->f_stream.open("../mapa_assets.txt", std::ios::in);
-
+		
 	if (!f_stream.is_open())
 	{
 	gDebug.erro("erro ao abrir .txt", this);
@@ -45,10 +45,12 @@ void Jogo::inicializar()
 
 	}
 	
-	//gMusica.tocar("Kings_Feast", true, 0, 0);
-
+	//gMusica.tocar("Kings_Feast", true);
+	
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
+	//sprSelect.setSpriteSheet("selection_structure_obj");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
+	
 		
 	sprDownSelect.setX(xMenu);
 	sprDownSelect.setY(yMenu);
@@ -151,7 +153,8 @@ void Jogo::movLista()
 
 void Jogo::executeSelect()
 {		
-	sprMenuSelect.desenhar(400, 300);		
+	sprMenuSelect.desenhar(400, 300);
+		
 	sprDownSelect.desenhar();
 	
 }
@@ -166,8 +169,10 @@ void Jogo::Listar()
 {
 		
 	carro->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.
-	lista.push_back(carro->getSprite()); //Recebe a sprite na última posição da lista.
-	carro->desenhar(xMenu, 300);//Desenha na posição com a seleção. 				 	
+	lista.push_back(carro->getSprite()); //Adiciona a sprite na última posição da lista.
+	carro->desenhar(xMenu, 300);//Desenha na posição com a seleção.
+	
+	
 		
 }
 

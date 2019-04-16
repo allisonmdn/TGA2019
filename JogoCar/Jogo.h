@@ -29,8 +29,8 @@ public:
 
 
 private:
-	int pos;   	
-	Sprite sprSelect;
+	int pos;//Posição da lista dos carros.   	
+	//Sprite sprSelect;
 	Sprite sprMenuSelect;
 	BotaoSprite sprDownSelect;//Sprite manu seleção.
 	float xMenu, yMenu;

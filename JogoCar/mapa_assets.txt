@@ -6,6 +6,6 @@ sprite_sheet Car1 assets/spritesheets/car_red.png 4 1
 sprite_sheet Car2 assets/spritesheets/car_blue.png 4 1
 sprite_sheet Car3 assets/spritesheets/car_yellow.png 4 1
 sounds SMCoin assets/sounds/smario-coin.wav
-music Kings_Feast assets/sounds/Kings_Feast.ogg
 sounds Hurt assets/sounds/Hurt.wav
 font MCraft assets/fonts/Minecraft.ttf
+music Kings_Feast assets/sounds/Kings_Feast.ogg
