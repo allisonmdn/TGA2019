@@ -61,13 +61,15 @@ void Carro::move(float dx, float dy, float dir2)
 		
 		
 		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
-		{  				
-			setRot(-50);
+		{  
+			
+			setRot(-50);   //-50
 			dir = 2 - 0.5; //Esq. inferior
 		}
 		else if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_W])
 		{
-			setRot(50);
+			
+			setRot(50);	//50
 			dir = 2 + 0.5; //Esq. superior
 		}
 		else
@@ -114,8 +116,7 @@ void Carro::especialAtk()
 {
 	if (gTeclado.soltou[TECLA_ESPACO])
 	{
-		
-
+				
 	}
 }
 
@@ -130,8 +131,7 @@ void Carro::setSpriteSheet(std::string Sprite)
 void Carro::setSpeed(float speed2)
 {
 	speed = speed2;
-	speed = 1;
-	
+	speed = 1;		
 
 }
 
@@ -140,7 +140,7 @@ Sprite Carro::getSprite()
 	return car;
 }
 
-float Carro::getPos()
+float Carro::getDir()
 {
 	return dir;
 }

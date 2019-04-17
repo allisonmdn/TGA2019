@@ -16,13 +16,13 @@ public:
 
 	//Sets
 	void setSpriteSheet(std::string Sprite);
-	void setSpeed(float speed2);
+	virtual void setSpeed(float speed2);
 
 	//Returns
 	float getX();
 	float getY();	
 	Sprite getSprite();
-	float getPos();
+	float getDir();
 	float getSpeed();
 
 private:
@@ -31,5 +31,6 @@ private:
 	float dir; //Direção		 
 	Sprite car;
 	float speed;
+	float rot = 0;
 	
 };
