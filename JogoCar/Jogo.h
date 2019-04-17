@@ -32,7 +32,7 @@ private:
 	int pos;   	
 	Sprite sprSelect;
 	Sprite sprMenuSelect;
-	BotaoSprite sprDownSelect;//Sprite manu seleção.
+	BotaoSprite sprDownSelect;//Sprite menu seleção.
 	float xMenu, yMenu;
 	vector<Sprite> lista;
 	Carro * carro = new Carro();
