@@ -101,7 +101,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 
 					              //MUSIC BEGIN
 				  
-				if (def_resource_type == "music")
+				if (def_resource_type == "musics")
 				{
 					if (f_arquivos_rec.fail())
 					{
@@ -122,7 +122,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 						             //MUSIC END
 
 						             //FONT BEGIN	  
-				if (def_resource_type == "font")
+				if (def_resource_type == "fonts")
 				{
 					if (f_arquivos_rec.fail())
 					{

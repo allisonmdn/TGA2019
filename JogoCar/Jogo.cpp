@@ -11,19 +11,9 @@ Jogo::~Jogo()
 void Jogo::inicializar()
 {
 	uniInicializar(800, 600, false);
-	pos = 1;
-	//sprselect = "";
+	pos = 1;	
 	xMenu = 400;
-	yMenu = 300;
-	
-	/*gRecursos.carregarSpriteSheet("selection_structure_obj", "assets/selection/selection_structure_object.png", 1, 1);
-	gRecursos.carregarSpriteSheet("selection_structure_back", "assets/selection/selection_structure_back.png", 1, 1);
-	gRecursos.carregarSpriteSheet("selection_down", "assets/selection/selection_down.png", 1, 1);
-	gRecursos.carregarSpriteSheet("Car1", "assets/spritesheets/car_red.png", 4, 1);
-	gRecursos.carregarSpriteSheet("Car2", "assets/spritesheets/car_blue.png", 4, 1);
-	gRecursos.carregarSpriteSheet("Car3", "assets/spritesheets/car_yellow.png", 4, 1);*/
-
-	
+	yMenu = 300;	
 	
     this->f_stream.open("../mapa_assets.txt", std::ios::in);
 		
@@ -44,12 +34,12 @@ void Jogo::inicializar()
 		f_stream.close();
 
 	}
-	
-	//gMusica.tocar("Kings_Feast", true);
-	
+			
 	sprMenuSelect.setSpriteSheet("selection_structure_back");	
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
-	 	
+	
+	
+	
 
 	pista1.setSpriteSheet("Pista");
 
@@ -99,10 +89,11 @@ void Jogo::executar()
 			//lista.at(pos - 1);
 			gAudios.tocar("SMCoin", 50);
 
+			
 			while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 				{
 					uniIniciarFrame();
-
+					
 					pista1.desenhar(400,300);
 
 					carro->draw();
