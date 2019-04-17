@@ -32,11 +32,12 @@ private:
 	int pos;//Posição da lista dos carros.   	
 	//Sprite sprSelect;
 	Sprite sprMenuSelect;
-	BotaoSprite sprDownSelect;//Sprite manu seleção.
+	BotaoSprite sprDownSelect;//Sprite menu seleção.
 	float xMenu, yMenu;
 	vector<Sprite> lista;
 	Carro * carro = new Carro();
 	std::fstream f_stream;
+	Sprite pista1;//Pista 1
 
 	
 	

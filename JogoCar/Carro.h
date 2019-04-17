@@ -1,6 +1,7 @@
 #include <iostream>
 #include "libUnicornio.h"
 
+
 class Carro: public ObjetoTileMap
 {
 public:
@@ -11,6 +12,7 @@ public:
 	void move(float dx, float dy, float dir2);
 	void draw();
 	void update();
+	virtual void especialAtk();	
 
 	//Sets
 	void setSpriteSheet(std::string Sprite);
@@ -29,5 +31,5 @@ private:
 	float dir; //Direção		 
 	Sprite car;
 	float speed;
-		
+	
 };
