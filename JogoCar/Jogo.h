@@ -37,7 +37,7 @@ private:
 	vector<Sprite> lista;
 	Carro * carro = new Carro();
 	std::fstream f_stream;
-	Sprite pista1;
+	Sprite pista1;//Pista 1
 
 	
 	
