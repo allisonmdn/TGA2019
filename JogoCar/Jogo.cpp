@@ -11,42 +11,8 @@ Jogo::~Jogo()
 void Jogo::inicializar()
 {
 	uniInicializar(800, 600, false);
-	pos = 1;	
-	xMenu = 400;
-	yMenu = 300;	
 	
-    this->f_stream.open("../mapa_assets.txt", std::ios::in);
-		
-	if (!f_stream.is_open())
-	{
-	gDebug.erro("erro ao abrir .txt", this);
-	}
-	else
-	{
-		//cria alocação dinamicamente.
-
-		CarregadorAssets * c_assets = new CarregadorAssets();
-		
-		if (!c_assets->Carregador(f_stream))
-		{
-			gDebug.erro("erro ao carregar recursos!"); 
-		}
-		f_stream.close();
-
-	}
-			
-	sprMenuSelect.setSpriteSheet("selection_structure_back");	
-	sprDownSelect.setSpriteSheet("selection_structure_obj");
-	
-	
-	
-
-	pista1.setSpriteSheet("Pista");
-
-		
-	sprDownSelect.setX(xMenu);
-	sprDownSelect.setY(yMenu);
-
+	g_recursos->inicializarRecursos();
 	
 	/*test.setFonte("MCraft");  	
 	std::string texto_test = "Selecione o carro";
@@ -79,32 +45,8 @@ void Jogo::executar()
 	{
 		uniIniciarFrame();
 		
-		//test.desenhar(400, 100, 0);
-
-		executeSelect(); 			
-		updateM();
+		g_recursos->executarRecursos();
 		
-		if (gTeclado.soltou[TECLA_ENTER])
-		{
-			//lista.at(pos - 1);
-			gAudios.tocar("SMCoin", 50);
-
-			
-			while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
-				{
-					uniIniciarFrame();
-					
-					pista1.desenhar(400,300);
-
-					carro->draw();
-					carro->update();
-
-					uniTerminarFrame();
-
-				}
-			
-
-		}	
 
 		uniTerminarFrame();
 		//	Seu código vem aqui!
@@ -114,73 +56,3 @@ void Jogo::executar()
 }
 
 
-void Jogo::movLista()
-{	
-	Listar();
-
-	if (gTeclado.soltou[TECLA_DIR] && pos >= 1 && pos < 3)
-	{
-		pos += 1;  		
-			
-	}
-	if (gTeclado.soltou[TECLA_ESQ] && pos >= 2 && pos <= 3)
-	{
-		pos -= 1; 		
-		
-	}
-	
-	if (pos == 1)
-	{
-		xMenu = 269;
-	}
-	if (pos == 2)
-	{
-		xMenu = 399;
-	}
-	if (pos == 3)
-	{
-		xMenu = 530;
-	}
-	sprDownSelect.setX(xMenu);			
-
-}
-
-void Jogo::executeSelect()
-{		
-	sprMenuSelect.desenhar(400, 300);
-		
-	sprDownSelect.desenhar();
-	
-}
-
-void Jogo::updateM()
-{
-	movLista();
-		
-}
-
-void Jogo::Listar()
-{
-		
-	carro->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.
-
-	lista.push_back(carro->getSprite()); //Adiciona a sprite na última posição da lista.
-	carro->desenhar(xMenu, 300);//Desenha na posição com a seleção.
-
-		
-}
-
-int Jogo::getPos()
-{
-	return pos;
-}
-
-float Jogo::getXMenu()
-{
-	return xMenu;
-}
-
-float Jogo::getYMenu()
-{
-	return yMenu;
-}

@@ -12,9 +12,8 @@ public:
 	void movLista(); //Movimenta seleção.
 	void executeSelect();
 	void updateM();
-	void Listar();//Lista de carros.
-	void FundoMenu();
-
+	void Listar();//Lista de carros.  	
+	void up();
 
 	//Sets
 	
@@ -27,15 +26,10 @@ public:
 
 
 private:
-	int pos;
-	std::string sprselect;
-	Sprite menuS;//Atribuindo o carro selecionado.
-	Sprite sprMenuSelect, sprMenuSelectObj;
-	BotaoSprite sprDownSelect;//Sprite manu seleção.
-	float xMenu, yMenu;
-	vector<std::string> lista;
-	vector<Sprite> menu;
-	Carro * spr = new Carro(); // Sprite carros.
+	int pos;//Posição da lista dos carros. 	
+	float xMenu, yMenu; //Centro tela.
+	vector<Sprite> lista;
+	Carro * carro = new Carro();
 
 
 };

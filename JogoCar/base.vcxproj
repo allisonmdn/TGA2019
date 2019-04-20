@@ -14,7 +14,7 @@
     <ProjectGuid>{67AC409B-9BDA-4D9D-86C1-D2B9885557CF}</ProjectGuid>
     <RootNamespace>base</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -102,6 +102,7 @@
     <ClCompile Include="CarregadorAssets.cpp" />
     <ClCompile Include="Carro.cpp" />
     <ClCompile Include="Equilibrados.cpp" />
+    <ClCompile Include="GerenciadorRecursos.cpp" />
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Lentos.cpp" />
     <ClCompile Include="Rapidos.cpp" />
@@ -112,6 +113,7 @@
     <ClInclude Include="CarregadorAssets.h" />
     <ClInclude Include="Carro.h" />
     <ClInclude Include="Equilibrados.h" />
+    <ClInclude Include="GerenciadorRecursos.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Lentos.h" />
     <ClInclude Include="Rapidos.h" />
