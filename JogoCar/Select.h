@@ -1,5 +1,6 @@
 #include "Carro.h"
 #include <list>
+
 #pragma once
 class Select: public Carro
 {
@@ -13,8 +14,7 @@ public:
 	void executeSelect();
 	void updateM();
 	void Listar();//Lista de carros.  	
-	void up();
-
+	
 	//Sets
 	
 
@@ -28,7 +28,7 @@ public:
 private:
 	int pos;//Posição da lista dos carros. 	
 	float xMenu, yMenu; //Centro tela.
-	vector<Sprite> lista;
+	list<Sprite> lista;
 	Carro * carro = new Carro();
 
 

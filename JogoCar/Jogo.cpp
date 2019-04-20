@@ -44,7 +44,7 @@ void Jogo::executar()
 	while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 	{
 		uniIniciarFrame();
-		
+		//test.desenhar(400, 100);
 		g_recursos->executarRecursos();
 		
 

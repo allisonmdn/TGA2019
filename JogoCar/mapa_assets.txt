@@ -8,7 +8,9 @@ sprite_sheet Car3 assets/spritesheets/car_yellow.png 4 1
 sprite_sheet Car1 assets/spritesheets/Car_one.png 4 1
 sprite_sheet Car2 assets/spritesheets/Car_two.png 4 1
 sprite_sheet Pista assets/spritesheets/tilemap/tileset/spritesheet_pista_1.png 1 1
-sounds SMCoin assets/sounds/smario-coin.wav
-sounds Hurt assets/sounds/Hurt.wav
-fonts MCraft assets/fonts/Minecraft.ttf
-sounds TGear assets/sounds/TopGear.mp3
+sound SMCoin assets/sounds/smario-coin.wav
+font MCraft assets/fonts/Minecraft.ttf 16
+music TopGear2 assets/sounds/TopGear2.ogg
+sound Hurt assets/sounds/Hurt.wav
+
+

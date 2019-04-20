@@ -54,12 +54,16 @@ void GerenciadorRecursos::executarRecursos()
 	if (gTeclado.soltou[TECLA_ENTER])
 	{
 		//lista.at(pos - 1);
-		gAudios.tocar("SMCoin", 50);  		
+		gAudios.tocar("SMCoin", 50);
+				
+		//test.setAudio("TopGear2");
+		//test.tocar(true);
 		
 		while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 		{
 			uniIniciarFrame();
-			
+						
+
 			pista1.desenhar(400, 300);
 			selecao->executeSelect(); //Execução da seleção.
 
