@@ -40,10 +40,8 @@ void GerenciadorRecursos::inicializarRecursos()
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
 
-	carro_som.setAudio(selecao->getSomCarro()); // Seta som do carro selecionado.
 	
 	
-
 }
 
 void GerenciadorRecursos::executarRecursos()
@@ -61,6 +59,7 @@ void GerenciadorRecursos::executarRecursos()
 		
 		gAudios.tocar("SMCoin", 50);
 		
+		carro_som.setAudio(selecao->getSomCarro());
 		carro_som.tocar(true);
 		//test.setAudio("TopGear2");
 		//test.tocar(true);

@@ -32,7 +32,7 @@ private:
 	int pos;//Posição da lista dos carros. 	
 	float xMenu, yMenu; //Centro tela.
 	list<Sprite> lista;
-	Carro * carro = new Carro();
+	Carro * carro[3];// = new Carro();
 		
 };
 

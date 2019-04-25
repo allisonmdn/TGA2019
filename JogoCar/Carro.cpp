@@ -149,8 +149,8 @@ void Carro::setSoundCar(std::string i)
 
 	somCarro = i;
 
-	somCarro = "";	
-   	
+	somCarro = "eqParado";
+		
 }
 
 Sprite Carro::getSprite()
@@ -170,5 +170,6 @@ float Carro::getSpeed()
 
 std::string Carro::getSomCarro()
 {
+	
 	return somCarro;
 }
