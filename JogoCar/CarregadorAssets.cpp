@@ -143,7 +143,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 						gDebug.depurar("caminho_do_recurso", def_resource_local);
 					}
 					
-					gRecursos.carregarFonte(def_resource_name, def_resource_local, std::stoi(tamanho, &size), 0, 16, 16, QUALIDADE_ESCALA_BAIXA);
+					gRecursos.carregarFonte(def_resource_name, def_resource_local, 16 , 0, 16, 16, QUALIDADE_ESCALA_BAIXA); //std::stoi(tamanho, &size), 0, 16, 16, QUALIDADE_ESCALA_BAIXA);
 					
 					//tamanho padrão = 16.
 					//estilo padrão = 0.

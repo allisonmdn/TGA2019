@@ -21,6 +21,6 @@ private:
 	Select * selecao = new Select();
 	Sprite sprMenuSelect;
 	Sprite sprDownSelect;//Sprite menu seleção.
-  //Som test;
+    //Som test;
 };
 

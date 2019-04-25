@@ -12,9 +12,9 @@ void Jogo::inicializar()
 {
 	uniInicializar(800, 600, false);
 	
-	g_recursos->inicializarRecursos();
+	g_recursos->inicializarRecursos();	//Inicializa os recursos.
 	
-	/*test.setFonte("MCraft");  	
+	/*test.setFonte("hello");  	
 	std::string texto_test = "Selecione o carro";
 	test.setString(texto_test);
 	test.setCor(0, 0, 0, true);
@@ -40,12 +40,16 @@ void Jogo::executar()
 {	
 	
 
+
 	
 	while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 	{
 		uniIniciarFrame();
+
+		
+		gGraficos.desenharTexto("SELECIONE O SEU CARRO, E APERTE [ENTER]",400, 200, 255, 255, 255, 255);
 		//test.desenhar(400, 100);
-		g_recursos->executarRecursos();
+		g_recursos->executarRecursos();//Organiza e executa os recursos.
 		
 
 		uniTerminarFrame();
