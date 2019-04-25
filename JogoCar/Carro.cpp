@@ -2,8 +2,10 @@
 
 Carro::Carro()
 {	
+	//Inicializando variáveis.
 	this->x = 400;
 	this->y = 300;
+
 }
 Carro::~Carro()
 {
@@ -14,14 +16,16 @@ void Carro::move(float dx, float dy, float dir2)
 	this->x = dx;
 	this->y = dy;
 	this->dir = dir2;
-	
 
+	
 	if (gTeclado.segurando[TECLA_W])
 	{
 		y -= 1;
 		dir = 3;
 		car.setAnimacao(0, false);
 		setRot(0);
+
+		mov = true;
 			
 	}
 	if (gTeclado.segurando[TECLA_S])
@@ -30,14 +34,15 @@ void Carro::move(float dx, float dy, float dir2)
 		dir = 0;
 		car.setAnimacao(2, false);
 		setRot(0);
-		
 
+		mov = true;
 	}
 	if (gTeclado.segurando[TECLA_D])
 	{
 		x += 1;
 		dir = 1;
 		car.setAnimacao(3, false);
+		mov = true;
 		if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_S])
 		{				
 			setRot(50);
@@ -64,7 +69,7 @@ void Carro::move(float dx, float dy, float dir2)
 		x -= 1;
 		dir = 2;
 		car.setAnimacao(1, false);
-		
+		mov = true;
 		
 		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
 		{  
@@ -91,12 +96,18 @@ void Carro::move(float dx, float dy, float dir2)
 	
 	if (!gTeclado.segurando[TECLA_S] && !gTeclado.segurando[TECLA_D] && !gTeclado.segurando[TECLA_W] && !gTeclado.segurando[TECLA_A] && getSpeed() == 0)
 	{
+		
 		//setar animação para carro parado.
 	}
 
 	car.avancarAnimacao();
 
 	
+}
+
+bool Carro::isMovendo()
+{	
+	return mov;
 }
 
 float Carro::getX()
@@ -125,7 +136,7 @@ void Carro::especialAtk()
 {
 	if (gTeclado.pressionou[TECLA_ESPACO])
 	{			
-		gGraficos.desenharTexto("ATAQUE!", getX(), getY(), 255, 255, 255, 255);
+		gGraficos.desenharTexto("PADRÃO!", getX(), getY(), 255, 255, 255, 255);
 	}
 }
 

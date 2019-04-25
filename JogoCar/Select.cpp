@@ -1,7 +1,6 @@
 #include "Select.h"
 
 
-
 Select::Select()
 {		
 	pos = 1;
@@ -34,8 +33,7 @@ void Select::movLista()
 
 	if (pos == 1)
 	{	 
-		xMenu = 269;
-		
+		xMenu = 269;		
 		
 	}
 	if (pos == 2)
@@ -78,8 +76,8 @@ void Select::Listar()
 	carro[2] = new Lentos();
 
 	carro[pos - 1]->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.
-
-	//lista.push_back(carro[pos]->getSprite()); //Adiciona a sprite na última posição da lista.
+	
+		
 	carro[pos - 1]->desenhar(getXMenu(), 300);//Desenha na posição com a seleção.  
 }
 

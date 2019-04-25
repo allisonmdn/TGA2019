@@ -4,7 +4,7 @@
 
 Rapidos::Rapidos()
 {
-	
+	setSoundCar(s_car2);
 }
 
 

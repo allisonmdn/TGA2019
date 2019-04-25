@@ -1,7 +1,7 @@
 //#include "Carro.h"
 #include "Lentos.h"
 
-#include <list>
+//#include <list>
 
 #pragma once
 
@@ -14,9 +14,9 @@ public:
 	//Methods
 		
 	void movLista(); //Movimenta seleção.
-	void executeSelect();
-	void updateM();
-	void Listar();//Lista de carros.  	
+	void executeSelect();//Executa a seleção.
+	void updateM();//Atualiza.
+	void Listar();//Lista de carros, alocação.  	
 	
 	//Sets
 	
@@ -31,7 +31,7 @@ public:
 private:
 	int pos;//Posição da lista dos carros. 	
 	float xMenu, yMenu; //Centro tela.
-	list<Sprite> lista;
+	//list<Sprite> lista;
 	Carro * carro[3];// = new Carro();
 		
 };
