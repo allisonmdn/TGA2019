@@ -123,9 +123,9 @@ void Carro::update()
 
 void Carro::especialAtk()
 {
-	if (gTeclado.soltou[TECLA_ESPACO])
-	{
-		
+	if (gTeclado.pressionou[TECLA_ESPACO])
+	{			
+		gGraficos.desenharTexto("ATAQUE!", getX(), getY(), 255, 255, 255, 255);
 	}
 }
 
@@ -144,6 +144,15 @@ void Carro::setSpeed(float speed2)
 
 }
 
+void Carro::setSoundCar(std::string i)
+{
+
+	somCarro = i;
+
+	somCarro = "";	
+   	
+}
+
 Sprite Carro::getSprite()
 {
 	return car;
@@ -157,4 +166,9 @@ float Carro::getDir()
 float Carro::getSpeed()
 {
 	return speed;
+}
+
+std::string Carro::getSomCarro()
+{
+	return somCarro;
 }

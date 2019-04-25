@@ -1,6 +1,8 @@
-#include "Carro.h"
+
+#include "Rapidos.h"
+#include <iostream>
 #pragma once
-class Equilibrados:virtual public Carro
+class Equilibrados: virtual public Carro
 {
 public:
 	Equilibrados();
@@ -9,5 +11,10 @@ public:
 	//Overrides.
 
 	void especialAtk() override;
+	void setSoundCar(std::string i) override;
+
+private:
+	std::string s_car1;
+
 };
 

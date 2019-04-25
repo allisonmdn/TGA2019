@@ -8,6 +8,14 @@ Select::Select()
 
 	xMenu = 400;
 	yMenu = 300;
+	
+	//carro[0] = new Equilibrados();	
+
+	//carro[1] = new Rapidos();
+									  
+	//carro[2] = new Lentos();
+
+
 }
 
 
@@ -32,16 +40,20 @@ void Select::movLista()
 	}
 
 	if (pos == 1)
-	{
+	{	 
 		xMenu = 269;
+		reinterpret_cast<Equilibrados *>(&carro), sizeof(Carro);
+		
 	}
 	if (pos == 2)
-	{
+	{  
 		xMenu = 399;
+		reinterpret_cast<Rapidos *>(&carro), sizeof(Carro);		
 	}
 	if (pos == 3)
-	{
+	{			
 		xMenu = 530;
+		reinterpret_cast<Lentos *>(&carro), sizeof(Carro);		
 	}
 	
 
@@ -49,9 +61,10 @@ void Select::movLista()
 
 void Select::executeSelect()
 {	
-	//Buscar os metódos de execução da seleção.
+	//Buscar os metódos de execução da seleção.	
+	
 	carro->draw();
-	carro->update(); 
+	carro->update();   	
 
 }
 
@@ -63,13 +76,11 @@ void Select::updateM()
 
 void Select::Listar()
 {
-
+	
 	carro->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.
 
-	lista.push_back(carro->getSprite()); //Adiciona a sprite na última posição da lista.
-	carro->desenhar(xMenu, 300);//Desenha na posição com a seleção.
-
-
+	//lista.push_back(carro[pos]->getSprite()); //Adiciona a sprite na última posição da lista.
+	carro->desenhar(getXMenu(), 300);//Desenha na posição com a seleção.  
 }
 
 int Select::getPos()

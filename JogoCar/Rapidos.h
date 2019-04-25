@@ -8,5 +8,10 @@ public:
 
 	//Overrides
 	void especialAtk() override;
+	void setSoundCar(std::string i) override;
+
+private:
+	std::string s_car2;
+
 };
 

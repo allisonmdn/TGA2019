@@ -39,8 +39,10 @@ void GerenciadorRecursos::inicializarRecursos()
 
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
-		
-		
+
+	carro_som.setAudio(selecao->getSomCarro()); // Seta som do carro selecionado.
+	
+	
 
 }
 
@@ -48,22 +50,25 @@ void GerenciadorRecursos::executarRecursos()
 {		
 	sprMenuSelect.desenhar(400,300);
 	sprDownSelect.desenhar(selecao->getXMenu(), selecao->getYMenu()); //Recebe valor das variáveis do eixo x e y.
-
+	
 	selecao->updateM();
+
+	
 
 	if (gTeclado.soltou[TECLA_ENTER])
 	{
 		//lista.at(pos - 1);
+		
 		gAudios.tocar("SMCoin", 50);
-				
+		
+		carro_som.tocar(true);
 		//test.setAudio("TopGear2");
 		//test.tocar(true);
 		
 		while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 		{
 			uniIniciarFrame();
-						
-
+			 				   
 			pista1.desenhar(400, 300);
 			selecao->executeSelect(); //Execução da seleção.
 

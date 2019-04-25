@@ -4,6 +4,7 @@
 #include "CarregadorAssets.h"
 #include "Select.h"
 
+
 #pragma once
 class GerenciadorRecursos
 {
@@ -21,6 +22,7 @@ private:
 	Select * selecao = new Select();
 	Sprite sprMenuSelect;
 	Sprite sprDownSelect;//Sprite menu seleção.
+	Som carro_som;
     //Som test;
 };
 

@@ -4,11 +4,18 @@ sprite_sheet selection_structure_back assets/selection/selection_structure_back.
 sprite_sheet selection_down assets/selection/selection_down.png 1 3
 sprite_sheet Car10 assets/spritesheets/car_red.png 4 1
 sprite_sheet Car11 assets/spritesheets/car_blue.png 4 1
-sprite_sheet Car3 assets/spritesheets/car_yellow.png 4 1
+sprite_sheet Car12 assets/spritesheets/car_yellow.png 4 1
 sprite_sheet Car1 assets/spritesheets/Car_one.png 4 1
 sprite_sheet Car2 assets/spritesheets/Car_two.png 4 1
+sprite_sheet Car3 assets/spritesheets/Car_three.png 4 1
 sprite_sheet Pista assets/spritesheets/tilemap/tileset/spritesheet_pista_1.png 1 1
 sound SMCoin assets/sounds/smario-coin.wav
+sound eqParado assets/sounds/equilibrado_engine_2.wav
+sound rapParado assets/sounds/rapido_engine_1.wav
+sound lenParado assets/sounds/lento_engine_3.wav
+sound eqAndando assets/sounds/equilibrado_engine_fast_2.wav
+sound rapAndando assets/sounds/rapido_engine_fast_1.wav
+sound lenAndando assets/sounds/lento_engine_fast_3.wav
 font hello assets/fonts/hello-world.ttf
 music TopGear2 assets/sounds/TopGear2.ogg
 sound Hurt assets/sounds/Hurt.wav

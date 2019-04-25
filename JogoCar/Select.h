@@ -1,8 +1,11 @@
-#include "Carro.h"
+//#include "Carro.h"
+#include "Lentos.h"
+
 #include <list>
 
 #pragma once
-class Select: public Carro
+
+class Select: virtual public Carro	
 {
 public:
 	Select();
@@ -30,7 +33,6 @@ private:
 	float xMenu, yMenu; //Centro tela.
 	list<Sprite> lista;
 	Carro * carro = new Carro();
-
-
+		
 };
 
