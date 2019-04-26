@@ -1,11 +1,10 @@
-//#include "Carro.h"
 #include "Lentos.h"
 
 //#include <list>
 
 #pragma once
 
-class Select: virtual public Carro	
+class Select
 {
 public:
 	Select();

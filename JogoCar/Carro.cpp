@@ -11,7 +11,7 @@ Carro::~Carro()
 {
 }
 
-void Carro::move(float dx, float dy, float dir2)
+void Carro::move(int dx, int dy, float dir2)
 {
 	this->x = dx;
 	this->y = dy;
@@ -60,8 +60,7 @@ void Carro::move(float dx, float dy, float dir2)
 		{
 			setRot(0);
 			
-		}
-		
+		}		
 		
 	}
 	if (gTeclado.segurando[TECLA_A])
@@ -89,8 +88,7 @@ void Carro::move(float dx, float dy, float dir2)
 		{
 			setRot(0);
 			
-		}
-		
+		}	
 		
 	}	
 	
@@ -101,7 +99,6 @@ void Carro::move(float dx, float dy, float dir2)
 	}
 
 	car.avancarAnimacao();
-
 	
 }
 
@@ -110,20 +107,19 @@ bool Carro::isMovendo()
 	return mov;
 }
 
-float Carro::getX()
+int Carro::getX()
 {
 	return x;
 }
 
-float Carro::getY()
+int Carro::getY()
 {
 	return y;
 }
 
 void Carro::draw()
 {
-	car.desenhar(x, y, getRot());
-	
+	car.desenhar(x, y, getRot());	
 }
 
 void Carro::update()
@@ -134,7 +130,7 @@ void Carro::update()
 
 void Carro::especialAtk()
 {
-	if (gTeclado.pressionou[TECLA_ESPACO])
+	if (gTeclado.segurando[TECLA_ESPACO])
 	{			
 		gGraficos.desenharTexto("PADRÃO!", getX(), getY(), 255, 255, 255, 255);
 	}

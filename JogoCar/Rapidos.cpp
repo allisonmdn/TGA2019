@@ -14,7 +14,7 @@ Rapidos::~Rapidos()
 
 void Rapidos::especialAtk()
 {
-	if (gTeclado.soltou[TECLA_ESPACO])
+	if (gTeclado.segurando[TECLA_ESPACO])
 	{
 		gGraficos.desenharTexto("CARRO RÁPIDO!", getX(), getY(), 255, 255, 255, 255);
 	}

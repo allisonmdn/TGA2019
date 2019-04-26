@@ -8,7 +8,7 @@ public:
 	~Carro();
 
 	//Methods
-	void move(float dx, float dy, float dir2);
+	void move(int dx, int dy, float dir2);
 	bool isMovendo();
 	void draw();
 	void update();
@@ -20,8 +20,8 @@ public:
 	virtual void setSoundCar(std::string i);
 
 	//Returns
-	float getX();//x
-	float getY();//y	
+	int getX();//x
+	int getY();//y	
 	Sprite getSprite();//Recebe sprite.
 	float getDir();//Recebe a direção.
 	float getSpeed();//Recebe a Velocidade do carro.
@@ -29,11 +29,11 @@ public:
 
 private:
 	//Var
-	float x, y;//Eixos.
-	float dir; //Direção.		 
+	int x, y;//Eixos.
+	int dir; //Direção.		 
 	Sprite car;
 	float speed;
-	//float rot = 0;//Rotação, cause necessite mudança contínua.
+	float rot = 0;//Rotação, cause necessite mudança contínua.
 	std::string somCarro = "";
 	bool mov = false;//Em caso que estiver movendo o carro.
 	

@@ -40,9 +40,9 @@ void GerenciadorRecursos::inicializarRecursos()
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
 
-	carro_som.setAudio(selecao->getSomCarro());
+	//carro_som.setAudio(selecao->getSomCarro());
 		
-	carro_som.tocar(true);
+	//carro_som.tocar(true);
 }
 
 void GerenciadorRecursos::executarRecursos()
@@ -67,8 +67,6 @@ void GerenciadorRecursos::executarRecursos()
 		{
 			uniIniciarFrame();
 			
-			
-
 			pista1.desenhar(400, 300);
 			selecao->executeSelect(); //Execução da seleção.
 

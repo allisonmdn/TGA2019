@@ -1,6 +1,6 @@
 
 #include "Rapidos.h"
-#include <iostream>
+
 #pragma once
 class Equilibrados: virtual public Carro
 {
