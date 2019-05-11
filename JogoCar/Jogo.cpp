@@ -13,7 +13,7 @@ void Jogo::inicializar()
 	uniInicializar(800, 600, false);
 	
 	g_recursos->inicializarRecursos();	//Inicializa os recursos.
-	
+		
 	/*test.setFonte("hello");  	
 	std::string texto_test = "Selecione o carro";
 	test.setString(texto_test);

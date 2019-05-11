@@ -5,7 +5,7 @@ Carro::Carro()
 	//Inicializando variáveis.
 	this->x = 400;
 	this->y = 300;
-
+				
 }
 Carro::~Carro()
 {
@@ -25,7 +25,7 @@ void Carro::move(int dx, int dy, float dir2)
 		car.setAnimacao(0, false);
 		setRot(0);
 
-		mov = true;
+		setIsMovendo(true);
 			
 	}
 	if (gTeclado.segurando[TECLA_S])
@@ -35,14 +35,14 @@ void Carro::move(int dx, int dy, float dir2)
 		car.setAnimacao(2, false);
 		setRot(0);
 
-		mov = true;
+		setIsMovendo(true);
 	}
 	if (gTeclado.segurando[TECLA_D])
 	{
 		x += 1;
 		dir = 1;
 		car.setAnimacao(3, false);
-		mov = true;
+		
 		if (gTeclado.segurando[TECLA_D] && gTeclado.segurando[TECLA_S])
 		{				
 			setRot(50);
@@ -60,7 +60,8 @@ void Carro::move(int dx, int dy, float dir2)
 		{
 			setRot(0);
 			
-		}		
+		}
+		setIsMovendo(true);
 		
 	}
 	if (gTeclado.segurando[TECLA_A])
@@ -68,7 +69,7 @@ void Carro::move(int dx, int dy, float dir2)
 		x -= 1;
 		dir = 2;
 		car.setAnimacao(1, false);
-		mov = true;
+		
 		
 		if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_S])
 		{  
@@ -78,17 +79,16 @@ void Carro::move(int dx, int dy, float dir2)
 			
 		}
 		else if (gTeclado.segurando[TECLA_A] && gTeclado.segurando[TECLA_W])
-		{
-			
+		{				
 			setRot(50);	//50
-			dir = 2 + 0.5; //Esq. superior
-			
+			dir = 2 + 0.5; //Esq. superior 			
 		}
 		else
 		{
 			setRot(0);
 			
-		}	
+		}
+		setIsMovendo(true);
 		
 	}	
 	
@@ -97,13 +97,16 @@ void Carro::move(int dx, int dy, float dir2)
 		
 		//setar animação para carro parado.
 	}
+	setIsMovendo(false);
 
 	car.avancarAnimacao();
 	
 }
 
-bool Carro::isMovendo()
+bool Carro::setIsMovendo(bool m)
 {	
+	mov = m;
+
 	return mov;
 }
 
@@ -116,7 +119,6 @@ int Carro::getY()
 {
 	return y;
 }
-
 void Carro::draw()
 {
 	car.desenhar(x, y, getRot());	
@@ -126,13 +128,14 @@ void Carro::update()
 {
 	this->move(x, y, dir);
 	especialAtk();
+	playSoundCar();
 }
 
 void Carro::especialAtk()
 {
 	if (gTeclado.segurando[TECLA_ESPACO])
 	{			
-		gGraficos.desenharTexto("PADRÃO!", getX(), getY(), 255, 255, 255, 255);
+		gGraficos.desenharTexto("ATAQUE!", getX(), getY(), 255, 255, 255, 255);
 	}
 }
 
@@ -152,12 +155,9 @@ void Carro::setSpeed(float speed2)
 }
 
 void Carro::setSoundCar(std::string i)
-{
-
+{	   
 	somCarro = i;
-
-	somCarro = "eqParado";
-		
+					
 }
 
 Sprite Carro::getSprite()
@@ -175,8 +175,14 @@ float Carro::getSpeed()
 	return speed;
 }
 
-std::string Carro::getSomCarro()
+std::string Carro::getSoundCar()
 {
 	
 	return somCarro;
+}
+
+void Carro::playSoundCar()
+{
+	
+	gAudios.tocar(getSoundCar(), 1);
 }

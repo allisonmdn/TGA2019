@@ -4,7 +4,7 @@
 
 Lentos::Lentos()
 {
-	
+	setSoundCar(s_car3);
 }
 
 
@@ -18,14 +18,26 @@ void Lentos::especialAtk()
 	{
 		gGraficos.desenharTexto("CARRO LENTO!", getX(), getY(), 255, 255, 255, 255);
 	}
-	//DEIXOU O CODIGO ABERTO NEHHHH AHAHAHAHAHAHAHHAHAHA
-	//
+	
 }
 
 void Lentos::setSoundCar(std::string i)
 {
 	s_car3 = i;
-
-	s_car3 = "lenParado";
+   
+	if (setIsMovendo(false))
+	{	
+		s_car3 = "lenParado"; 		
+	}
+	else
+	{
+		s_car3 = "lenAndando";
+	}
 	
+		
+}
+
+std::string Lentos::getSoundCar()
+{
+	return s_car3;
 }

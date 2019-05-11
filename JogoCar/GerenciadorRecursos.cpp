@@ -40,9 +40,9 @@ void GerenciadorRecursos::inicializarRecursos()
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
 
-	//carro_som.setAudio(selecao->getSomCarro());
+	//gMusica.setVolumeGlobal(20);
+	gMusica.tocar("TitleTop",true,0,0);
 		
-	//carro_som.tocar(true);
 }
 
 void GerenciadorRecursos::executarRecursos()

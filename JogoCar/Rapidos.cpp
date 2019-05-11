@@ -5,12 +5,15 @@
 Rapidos::Rapidos()
 {
 	setSoundCar(s_car2);
+		
+		
 }
 
 
 Rapidos::~Rapidos()
 {
 }
+
 
 void Rapidos::especialAtk()
 {
@@ -23,7 +26,22 @@ void Rapidos::especialAtk()
 void Rapidos::setSoundCar(std::string i)
 {
 	s_car2 = i;
+		
+	if (setIsMovendo(false))
+	{
+				
+		s_car2 = "rapParado";
+				
+	}
+	else
+	{
+		s_car2 = "rapAndando";
 
-	s_car2 = "rapParado";
+	}  	
 	
+}
+
+std::string Rapidos::getSoundCar()
+{
+	return s_car2;
 }

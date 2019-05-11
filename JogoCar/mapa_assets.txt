@@ -18,6 +18,7 @@ sound rapAndando assets/sounds/rapido_engine_fast_1.wav
 sound lenAndando assets/sounds/lento_engine_fast_3.wav
 font hello assets/fonts/hello-world.ttf
 music TopGear2 assets/sounds/TopGear2.ogg
-sound Hurt assets/sounds/Hurt.wav
+music TitleTop assets/sounds/TitleTG.mp3 10
+music endingTop assets/sounds/EndingTG.mp3 10
 
 

@@ -11,6 +11,7 @@ public:
 
 	virtual void especialAtk() override;
 	void setSoundCar(std::string i) override;
+	std::string getSoundCar() override;
 
 private:
 	std::string s_car3;

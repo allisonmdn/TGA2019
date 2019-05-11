@@ -4,7 +4,7 @@
 
 Equilibrados::Equilibrados()
 {
-	
+	setSoundCar(s_car1);
 }
 
 
@@ -22,8 +22,20 @@ void Equilibrados::especialAtk()
 
 void Equilibrados::setSoundCar(std::string i)
 {
-	s_car1 = i;
+	s_car1 = i;	  	
+	
+	if (setIsMovendo(false))
+	{			
+		s_car1 = "eqParado";
+	}
+	else
+	{
+		s_car1 = "eqAndando";
+	}
+	
+}
 
-	s_car1 = "eqParado";
-
+std::string Equilibrados::getSoundCar()
+{
+	return s_car1;
 }

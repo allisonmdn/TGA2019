@@ -24,7 +24,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 	std::string def_n_max_frames;
 
 	//sounds
-	//std::string vol; 
+	std::string vol;
 
 	//font
 	std::string tamanho;
@@ -50,13 +50,13 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 			{
 				
 						
-				f_arquivos_rec >> def_resource_type >> def_resource_name >> def_resource_local >> def_n_animations >> def_n_max_frames;
+				f_arquivos_rec >> def_resource_type;// >> def_resource_name >> def_resource_local >> def_n_animations >> def_n_max_frames;
 
 				        //SPRITE SHEET BEGIN
 
 				if (def_resource_type == "sprite_sheet")
 				{
-					//f_arquivos_rec >> def_resource_name >> def_resource_local >> def_n_animations >> def_n_max_frames;
+					f_arquivos_rec >> def_resource_name >> def_resource_local >> def_n_animations >> def_n_max_frames;
 
 					if (f_arquivos_rec.fail())
 					{
@@ -83,7 +83,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 						       //SOUNDS BEGIN
 				else if (def_resource_type == "sound") 
 				{
-					//f_arquivos_rec >> def_resource_name >> def_resource_local;
+					f_arquivos_rec >> def_resource_name >> def_resource_local;
 
 					if (f_arquivos_rec.fail())	
 					{								 
@@ -108,7 +108,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 				  
 				else if (def_resource_type == "music")
 				{
-					//f_arquivos_rec >> def_resource_name >> def_resource_local;// >> vol;
+					f_arquivos_rec >> def_resource_name >> def_resource_local >> vol;
 
 					if (f_arquivos_rec.fail())
 					{
@@ -118,7 +118,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 						gDebug.depurar("caminho_do_recurso", def_resource_local);
 					}
 					
-					gRecursos.carregarMusica(def_resource_name, def_resource_local);//stof(vol, &size));
+					gRecursos.carregarMusica(def_resource_name, def_resource_local, stof(vol, &size));
 					
 					
 					if (!gRecursos.carregouMusica(def_resource_name))
@@ -133,7 +133,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 						             //FONT BEGIN	  
 				else if (def_resource_type == "font")
 				{
-					//f_arquivos_rec >> def_resource_name >> def_resource_local >> tamanho;
+					f_arquivos_rec >> def_resource_name >> def_resource_local >> tamanho;
 
 					if (f_arquivos_rec.fail())
 					{
