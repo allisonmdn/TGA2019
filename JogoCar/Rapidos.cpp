@@ -27,16 +27,13 @@ void Rapidos::setSoundCar(std::string i)
 {
 	s_car2 = i;
 		
-	if (setIsMovendo(false))
-	{
-				
-		s_car2 = "rapParado";
-				
+	if (getIsMovendo() == false)
+	{											
+		s_car2 = "rapParado";					
 	}
 	else
 	{
-		s_car2 = "rapAndando";
-
+		s_car2 = "rapAndando";	
 	}  	
 	
 }

@@ -14,12 +14,13 @@ void Jogo::inicializar()
 	
 	g_recursos->inicializarRecursos();	//Inicializa os recursos.
 		
-	/*test.setFonte("hello");  	
-	std::string texto_test = "Selecione o carro";
-	test.setString(texto_test);
-	test.setCor(0, 0, 0, true);
+	test.setFonte("minecraft");  	
+	std::string texto_test = "Selecione o carro, e pressione [ENTER]";
+	test.setString(texto_test);		   
+
+	test.setCor(255, 255, 255, true);
 	test.setAlinhamento(TEXTO_CENTRALIZADO);
-	test.setEspacamentoLinhas(1.5f);*/
+	test.setEspacamentoLinhas(1.5f);
 				
 	//	O resto da inicialização vem aqui!
 	//	...
@@ -46,9 +47,12 @@ void Jogo::executar()
 		uniIniciarFrame();
 
 		
-		gGraficos.desenharTexto("SELECIONE O SEU CARRO, E APERTE [ENTER]",400, 200, 255, 255, 255, 255);
+
+		//gGraficos.desenharTexto("SELECIONE O SEU CARRO, E APERTE [ENTER]",400, 200, 255, 255, 255, 255);
 		//test.desenhar(400, 100);
-		g_recursos->executarRecursos();//Organiza e executa os recursos.				
+		g_recursos->executarRecursos();//Organiza e executa os recursos.
+		test.desenhar(400, 200);
+
 
 		uniTerminarFrame();
 		//	Seu código vem aqui!

@@ -23,7 +23,7 @@ void GerenciadorRecursos::inicializarRecursos()
 	}
 	else
 	{
-		//cria alocação dinamicamente.
+		//Cria alocação dinamicamente.
 
 		CarregadorAssets * c_assets = new CarregadorAssets();
 
@@ -39,8 +39,7 @@ void GerenciadorRecursos::inicializarRecursos()
 
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
-
-	//gMusica.setVolumeGlobal(20);
+		
 	gMusica.tocar("TitleTop",true,0,0);
 		
 }
@@ -58,10 +57,7 @@ void GerenciadorRecursos::executarRecursos()
 		//lista.at(pos - 1);
 		
 		gAudios.tocar("SMCoin", 50);
-		
-		
-		//test.setAudio("TopGear2");
-		//test.tocar(true);
+				
 		
 		while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 		{

@@ -24,7 +24,7 @@ void Equilibrados::setSoundCar(std::string i)
 {
 	s_car1 = i;	  	
 	
-	if (setIsMovendo(false))
+	if (getIsMovendo() == false)
 	{			
 		s_car1 = "eqParado";
 	}

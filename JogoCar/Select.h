@@ -21,7 +21,7 @@ public:
 	
 
 	//Returns
-	int getPos();
+	int getPos(); //Seleção
 	float getXMenu();
 	float getYMenu();
 

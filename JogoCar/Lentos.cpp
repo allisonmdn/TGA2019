@@ -25,7 +25,7 @@ void Lentos::setSoundCar(std::string i)
 {
 	s_car3 = i;
    
-	if (setIsMovendo(false))
+	if (getIsMovendo() == false)
 	{	
 		s_car3 = "lenParado"; 		
 	}

@@ -19,6 +19,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 	std::string def_resource_local;
 	std::string::size_type size;
 
+
 	//sprite_sheets
 	std::string def_n_animations; 
 	std::string def_n_max_frames;
@@ -54,10 +55,13 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 
 				        //SPRITE SHEET BEGIN
 
+				
+
 				if (def_resource_type == "sprite_sheet")
 				{
 					f_arquivos_rec >> def_resource_name >> def_resource_local >> def_n_animations >> def_n_max_frames;
 
+					
 					if (f_arquivos_rec.fail())
 					{
 						gDebug.depurar("Erro", f_arquivos_rec.fail());
@@ -85,6 +89,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 				{
 					f_arquivos_rec >> def_resource_name >> def_resource_local;
 
+
 					if (f_arquivos_rec.fail())	
 					{								 
 						gDebug.depurar("Erro", f_arquivos_rec.fail());
@@ -109,6 +114,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 				else if (def_resource_type == "music")
 				{
 					f_arquivos_rec >> def_resource_name >> def_resource_local >> vol;
+										
 
 					if (f_arquivos_rec.fail())
 					{
@@ -134,6 +140,7 @@ bool CarregadorAssets::Carregador(std::fstream & f_arquivos_rec)
 				else if (def_resource_type == "font")
 				{
 					f_arquivos_rec >> def_resource_name >> def_resource_local >> tamanho;
+
 
 					if (f_arquivos_rec.fail())
 					{

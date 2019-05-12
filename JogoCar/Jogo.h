@@ -17,7 +17,7 @@ public:
 	void executar();
 	
 	//Text
-	//Texto test;
+	Texto test;
 
 
 private:

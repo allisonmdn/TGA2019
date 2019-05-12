@@ -16,9 +16,8 @@ sound lenParado assets/sounds/lento_engine_3.wav
 sound eqAndando assets/sounds/equilibrado_engine_fast_2.wav
 sound rapAndando assets/sounds/rapido_engine_fast_1.wav
 sound lenAndando assets/sounds/lento_engine_fast_3.wav
-font hello assets/fonts/hello-world.ttf
-music TopGear2 assets/sounds/TopGear2.ogg
+font hello assets/fonts/hello-world.ttf 16
+font minecraft assets/fonts/Minecraft.ttf 16
+music TopGear2 assets/sounds/TopGear2.ogg 10
 music TitleTop assets/sounds/TitleTG.mp3 10
 music endingTop assets/sounds/EndingTG.mp3 10
-
-
