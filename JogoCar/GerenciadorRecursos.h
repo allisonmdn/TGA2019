@@ -13,15 +13,10 @@ public:
 	~GerenciadorRecursos();
 
 	void inicializarRecursos();
-	void executarRecursos();
-
+	
 private:  
 
 	std::fstream f_stream;
-	Sprite pista1;//Pista 1
-	Select * selecao = new Select();
-	Sprite sprMenuSelect;
-	Sprite sprDownSelect;//Sprite menu seleção.
-	
+   	
 };
 

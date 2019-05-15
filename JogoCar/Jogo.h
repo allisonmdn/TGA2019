@@ -16,13 +16,14 @@ public:
 
 	void executar();
 	
-	//Text
-	Texto test;
-
 
 private:
 	
-	GerenciadorRecursos * g_recursos = new GerenciadorRecursos();  
-	
+	GerenciadorRecursos * g_recursos = new GerenciadorRecursos;
+	Select * selecao = new Select;
+	Sprite pista1;//Pista 1	   	
+	Sprite sprMenuSelect;
+	Sprite sprDownSelect;//Sprite menu seleção.
+	Texto txt;
 };
 

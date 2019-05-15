@@ -15,17 +15,13 @@ public:
 	void movLista(); //Movimenta seleção.
 	void executeSelect();//Executa a seleção.
 	void updateM();//Atualiza.
-	void Listar();//Lista de carros, alocação.  	
+	void Listar();//Lista de carros, alocação.
 	
-	//Sets
-	
-
 	//Returns
 	int getPos(); //Seleção
 	float getXMenu();
 	float getYMenu();
-
-
+	
 
 private:
 	int pos;//Posição da lista dos carros. 	

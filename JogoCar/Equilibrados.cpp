@@ -31,6 +31,7 @@ void Equilibrados::setSoundCar(std::string i)
 	else
 	{
 		s_car1 = "eqAndando";
+		
 	}
 	
 }

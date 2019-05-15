@@ -34,41 +34,11 @@ void GerenciadorRecursos::inicializarRecursos()
 		f_stream.close();
 
 	}
-     //Mapa
-	pista1.setSpriteSheet("Pista");
 
-	sprMenuSelect.setSpriteSheet("selection_structure_back");
-	sprDownSelect.setSpriteSheet("selection_structure_obj");
 		
 	gMusica.tocar("TitleTop",true,0,0);
 		
 }
 
-void GerenciadorRecursos::executarRecursos()
-{		
-	sprMenuSelect.desenhar(400,300);
-	sprDownSelect.desenhar(selecao->getXMenu(), selecao->getYMenu()); //Recebe valor das variáveis do eixo x e y.
-	
-	selecao->updateM();
-			
 
-	if (gTeclado.soltou[TECLA_ENTER])
-	{
-		//lista.at(pos - 1);
-		
-		gAudios.tocar("SMCoin", 50);
-				
-		
-		while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
-		{
-			uniIniciarFrame();
-			
-			pista1.desenhar(400, 300);
-			selecao->executeSelect(); //Execução da seleção.
 
-			uniTerminarFrame();
-
-		}
-
-	}
-}

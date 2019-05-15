@@ -12,15 +12,27 @@ void Jogo::inicializar()
 {
 	uniInicializar(800, 600, false);
 	
-	g_recursos->inicializarRecursos();	//Inicializa os recursos.
-		
-	test.setFonte("minecraft");  	
-	std::string texto_test = "Selecione o carro, e pressione [ENTER]";
-	test.setString(texto_test);		   
+	g_recursos->inicializarRecursos();	//Carrega e inicializa os recursos base.
+	
+										//Mapa
 
-	test.setCor(255, 255, 255, true);
-	test.setAlinhamento(TEXTO_CENTRALIZADO);
-	test.setEspacamentoLinhas(1.5f);
+	pista1.setSpriteSheet("Pista");
+
+										//Seleção
+
+	sprMenuSelect.setSpriteSheet("selection_structure_back");
+	sprDownSelect.setSpriteSheet("selection_structure_obj");
+
+									    //Texto
+	
+	txt.setFonte("minecraft");
+	std::string texto = "Selecione o carro, e pressione [ENTER]";
+	txt.setString(texto);
+
+	txt.setCor(255, 255, 255, true);
+	txt.setAlinhamento(TEXTO_CENTRALIZADO);
+	txt.setEspacamentoLinhas(1.5f);
+
 				
 	//	O resto da inicialização vem aqui!
 	//	...
@@ -37,21 +49,42 @@ void Jogo::finalizar()
 }
 
 void Jogo::executar()
-{	
-	
-
+{		   
 
 	
 	while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 	{
 		uniIniciarFrame();
+								 //CARRO
 
+		sprMenuSelect.desenhar(400, 300);  //Menu fundo branco, seleção carro.
+		sprDownSelect.desenhar(selecao->getXMenu(), selecao->getYMenu()); //Menu bloco azul, seleção objeto carro.
 		
+		selecao->updateM();	//Atualizar seleção menu.
 
-		//gGraficos.desenharTexto("SELECIONE O SEU CARRO, E APERTE [ENTER]",400, 200, 255, 255, 255, 255);
-		//test.desenhar(400, 100);
-		g_recursos->executarRecursos();//Organiza e executa os recursos.
-		test.desenhar(400, 200);
+		txt.desenhar(400, 200);  //Texto da seleção.
+
+
+		if (gTeclado.soltou[TECLA_ENTER])
+		{
+			//lista.at(pos - 1);
+
+			gAudios.tocar("SMCoin", 50);
+
+
+			while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
+			{
+				uniIniciarFrame();
+
+				pista1.desenhar(400, 300);
+				selecao->executeSelect(); //Execução da seleção.
+
+				uniTerminarFrame();
+
+			}
+
+		}
+		
 
 
 		uniTerminarFrame();

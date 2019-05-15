@@ -55,14 +55,12 @@ void Select::executeSelect()
 	//Buscar os metódos de execução da seleção.	
 	
 	carro[pos - 1]->draw();
-	carro[pos - 1]->update();   	
-
+	carro[pos - 1]->update(); 
 }
 
 void Select::updateM()
 {
-	movLista();
-
+	movLista();		 
 }
 
 void Select::Listar()
@@ -75,11 +73,11 @@ void Select::Listar()
 
 	carro[2] = new Lentos();
 
-	carro[pos - 1]->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.
-	
+	carro[pos - 1]->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.  	
 		
 	carro[pos - 1]->desenhar(getXMenu(), 300);//Desenha na posição com a seleção.  
 }
+
 
 int Select::getPos()
 {
@@ -95,4 +93,5 @@ float Select::getYMenu()
 {
 	return yMenu;
 }
+
 
