@@ -72,10 +72,11 @@ void Select::Listar()
 	carro[1] = new Rapidos();
 
 	carro[2] = new Lentos();
-
+	
 	carro[pos - 1]->setSpriteSheet("Car" + std::to_string(pos)); //Seta sprite do carro selecionado.  	
 		
-	carro[pos - 1]->desenhar(getXMenu(), 300);//Desenha na posição com a seleção.  
+	carro[pos - 1]->desenhar(getXMenu(), 300);//Desenha na posição com a seleção.
+
 }
 
 

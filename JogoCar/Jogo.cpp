@@ -16,14 +16,15 @@ void Jogo::inicializar()
 	
 										//Mapa
 
-	pista1.setSpriteSheet("Pista");
-
+	//pista1.setSpriteSheet("Pista");
+	
+	mapa.carregar("assets/spritesheets/tilemap/mapa2.json");
+		
 										//Seleção
 
 	sprMenuSelect.setSpriteSheet("selection_structure_back");
 	sprDownSelect.setSpriteSheet("selection_structure_obj");
-
-									    //Texto
+										    //Texto
 	
 	txt.setFonte("minecraft");
 	std::string texto = "Selecione o carro, e pressione [ENTER]";
@@ -31,9 +32,9 @@ void Jogo::inicializar()
 
 	txt.setCor(255, 255, 255, true);
 	txt.setAlinhamento(TEXTO_CENTRALIZADO);
-	txt.setEspacamentoLinhas(1.5f);
+	txt.setEspacamentoLinhas(1.5f);	 	
+	 	
 
-				
 	//	O resto da inicialização vem aqui!
 	//	...
 }
@@ -47,6 +48,7 @@ void Jogo::finalizar()
 
 	uniFinalizar();
 }
+
 
 void Jogo::executar()
 {		   
@@ -63,7 +65,7 @@ void Jogo::executar()
 		selecao->updateM();	//Atualizar seleção menu.
 
 		txt.desenhar(400, 200);  //Texto da seleção.
-
+		
 
 		if (gTeclado.soltou[TECLA_ENTER])
 		{
@@ -74,18 +76,17 @@ void Jogo::executar()
 
 			while (!gTeclado.soltou[TECLA_ESC] && !gEventos.sair)
 			{
-				uniIniciarFrame();
-
-				pista1.desenhar(400, 300);
+				uniIniciarFrame();	
+				
+				mapa.desenhar();
+				//pista1.desenhar(400, 300);
 				selecao->executeSelect(); //Execução da seleção.
 
 				uniTerminarFrame();
 
 			}
 
-		}
-		
-
+		}	   
 
 		uniTerminarFrame();
 		//	Seu código vem aqui!

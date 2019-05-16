@@ -23,7 +23,7 @@ public:
 	virtual void setSpeed(float speed2);
 
 	//Virtuais puros set.
-	virtual void setSoundCar(std::string i) = 0;
+	virtual void setSoundCar(std::string i);
 
 	//Returns
 	float getX();//x
@@ -37,18 +37,18 @@ public:
 	void playSoundCar();
 
 	//Virtuais puros get.
-	virtual std::string getSoundCar() = 0; //Recebe o som do respectivo carro.
+	virtual std::string getSoundCar(); //Recebe o som do respectivo carro.
 	
 
 private:
 	//Var
-	//float x, y;//Eixos.
+	float x, y;//Eixos.
 	float dir; //Direção.		 
 	Sprite car;
 	float speed;
 	float rot = 0;//Rotação, cause necessite mudança contínua.
 	std::string somCarro;
 	bool mov;//Em caso que estiver movendo o carro.		 	
-	Vetor2D eixo; //Eixos.
+	//Vetor2D eixo; //Eixos.
 	
 };

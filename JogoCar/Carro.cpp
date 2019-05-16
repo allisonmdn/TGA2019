@@ -3,8 +3,8 @@
 Carro::Carro()
 {	
 	//Inicializando variáveis.
-	this->eixo.x = 400;
-	this->eixo.y = 300;
+	this->x = 400;
+	this->y = 300;
 					
 }
 Carro::~Carro()
@@ -13,13 +13,13 @@ Carro::~Carro()
 
 void Carro::move(float dx, float dy, float dir2)
 {
-	this->eixo.x = dx;
-	this->eixo.y = dy;
+	this->x = dx;
+	this->y = dy;
 	this->dir = dir2;
 			
 	if (gTeclado.segurando[TECLA_W])
 	{
-		eixo.y -= 1;
+		y -= 1;
 		dir = 3;
 		car.setAnimacao(0, false);
 		setRot(0);
@@ -28,7 +28,7 @@ void Carro::move(float dx, float dy, float dir2)
 	}
 	if (gTeclado.segurando[TECLA_S])
 	{
-		eixo.y += 1;
+		y += 1;
 		dir = 0;
 		car.setAnimacao(2, false);
 		setRot(0);							
@@ -36,7 +36,7 @@ void Carro::move(float dx, float dy, float dir2)
 	}
 	if (gTeclado.segurando[TECLA_D])
 	{
-		eixo.x += 1;
+		x += 1;
 		dir = 1;
 		car.setAnimacao(3, false);
 		
@@ -61,7 +61,7 @@ void Carro::move(float dx, float dy, float dir2)
 	}
 	if (gTeclado.segurando[TECLA_A])
 	{
-		eixo.x -= 1;
+		x -= 1;
 		dir = 2;
 		car.setAnimacao(1, false);			
 				
@@ -105,23 +105,25 @@ bool Carro::getIsMovendo()
 
 float Carro::getX()
 {
-	return eixo.x;
+	return x;
 }
 
 float Carro::getY()
 {
-	return eixo.y;
+	return y;
 }
 void Carro::draw()
 {
-	car.desenhar(eixo.x, eixo.y, getRot());	
+	
+	car.desenhar(x, y, getRot());	
 }
 
 void Carro::update()
 {
-	this->move(eixo.x, eixo.y, dir);
+	this->move(x, y, dir);	
 	especialAtk();
 	playSoundCar();
+	
 }
 
 void Carro::especialAtk()
@@ -134,9 +136,10 @@ void Carro::especialAtk()
 
 
 void Carro::setSpriteSheet(std::string Sprite)
-{
+{		
 	car.setSpriteSheet(Sprite);
-    setSprite(&car); 	
+    setSprite(&car);
+
 }
 
 void Carro::setSpeed(float speed2)
@@ -145,10 +148,10 @@ void Carro::setSpeed(float speed2)
 	speed = 1;	
 }
 
-//void Carro::setSoundCar(std::string i)
-//{	   
-//	somCarro = i; 					
-//}
+void Carro::setSoundCar(std::string i)
+{	   
+	somCarro = i; 					
+}
 
 Sprite Carro::getSprite()
 {
@@ -165,12 +168,13 @@ float Carro::getSpeed()
 	return speed;
 }
 
-//std::string Carro::getSoundCar()
-//{			 	
-//	return somCarro;
-//}
+std::string Carro::getSoundCar()
+{			 	
+	return somCarro;
+}
 
 void Carro::playSoundCar()
 {						  	
 	gAudios.tocar(getSoundCar(), 1);
 }
+
